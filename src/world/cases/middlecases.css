@@ -1,0 +1,58 @@
+.middle_cases{
+    margin:60px 0;
+    -webkit-box-shadow: 0px 0px 23px 8px rgba(234,234,234,1);
+    -moz-box-shadow: 0px 0px 23px 8px rgba(234,234,234,1);
+    box-shadow: 0px 0px 23px 8px rgba(234,234,234,1);
+    border-radius: 8px;
+}
+.bg_headings{
+    background-color: #0371EA;
+    color:white;
+    padding:10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+}
+.middle_cases .headings h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color:black;
+    margin:0;
+    font-size:25px;
+}
+
+.middle_cases .cases_data{
+    padding:20px 0px;
+    border-radius: 8px;
+}
+.middle_cases .cases_data h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size:1.6vw;
+    font-weight: 500;
+    text-align: center;
+    color:black;
+    margin-bottom:10px;
+}
+.middle_cases .cases_data h6{
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    color:black;
+    text-align: center;
+    font-size:15px;
+}
+#bold{
+    font-weight:700;
+}
+.middle_cases .cases_data h3 #spanID{
+    margin:0;
+}
+
+
+@media (max-width:720px){
+    .middle_cases .cases_data h3{
+        font-size:3vw;
+        font-weight: 700;
+    }
+}
+

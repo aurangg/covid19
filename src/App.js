@@ -45,8 +45,9 @@ class App extends React.Component{
             <SideDrawer show={this.state.sideDrawerOpen} click={this.drawerToggleClickHandler} />
             {backdrop}
           <Switch>
-            <Route path="/" exact component={Homepage} />
+            <Route  exact path="/" component={Homepage} />
             <Route path="/worldwide" component={WorldWide} />
+            <Route path="/covid19" component={Homepage} />
           </Switch>
         </Router>
       </div>
