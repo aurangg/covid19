@@ -3,7 +3,26 @@ import '../components/Data/NewCases.css';
 
 const NewCase = (props) => {
     const {newcases, oldcases} = props.newcaseProps;
-    
+    //console.log(typeof)
+    //console.log(typeof oldcases)
+   function newCasesFunction(nc, oc){
+    let new_casesNUM = parseFloat(nc.replace(/,/g, ''))
+    let old_casesNUM = parseFloat(oc.replace(/,/g, ''))
+        if(new_casesNUM > old_casesNUM){
+           return(
+            <h4 id="figures" className="green">
+            +{nc}
+        </h4>
+           )
+        }
+        else{
+           return(
+            <h4 id="figures">
+            {nc}
+        </h4>
+           )
+        }
+    }
     return(
         <div className="new_cases">
             {newcases.latest_stat_by_country.map((e) => (
@@ -15,30 +34,41 @@ const NewCase = (props) => {
                             New Cases
                         </h1>
                     </div>
-                    <div className="row" style={{padding:'20px 15px 5px 15px'}}>
+                    <div className="spacing">
+                    <div className="row row_class">
                         <div className="col-6">
-                            <h4 style={{textAlign:'right'}}>
+                            <h4 id="days">
                                 Today:
                             </h4>
                         </div>
-                        <div className="col-6" style={{display:'flex'}}>
-                            <h4 style={{textAlign:'left', paddingRight:'10px'}}>
-                                {e.new_cases}
-                            </h4>
+                        <div className="col-6">
+                            {newCasesFunction(e.new_cases, oldcases)}        
                         </div>
                     </div>
-                    <div className="row" style={{padding:'5px 15px 20px 15px'}}>
+                    <div className="row row_class">
                         <div className="col-6">
-                            <h4 style={{textAlign:'right'}}>
+                            <h4 id="days">
                                 Yesterday:
                             </h4>
                         </div>
                         <div className="col-6">
-                            <h4 style={{textAlign:'left', paddingRight:'10px'}}>
+                            <h4 id="figures" style={{color:'green'}}>
                                 {oldcases}
                             </h4>
-                            
                         </div>
+                    </div>
+                    <div className="row row_class">
+                        <div className="col-6">
+                            <h4 id="days">
+                                Active Cases:
+                            </h4>
+                        </div>
+                        <div className="col-6">
+                            <h4 id="figures">
+                                {e.active_cases}
+                            </h4>
+                        </div>
+                    </div>
                     </div>
                 </div>
             ))}

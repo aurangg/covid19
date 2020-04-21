@@ -1,0 +1,79 @@
+@-webkit-keyframes planet-rotation {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: -200% 0%;
+    }
+}
+@keyframes planet-rotation {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: -200% 0%;
+    }
+}
+
+
+.containerSpecial {
+  padding: 64px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planet-image {
+     width: 30vw;
+     height: 30vw;
+     max-width: 600px;
+     max-height: 600px;
+     border-radius: 50%;
+     position: relative;
+     background: #303030 url('https://wallpapercave.com/wp/oYymn80.jpg') repeat-x;
+     background-size: cover;
+     -webkit-animation: planet-rotation 30s linear infinite;
+}
+
+.planet-image:after {
+    position: absolute;
+    content: '';
+    top: -1px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    
+    height: 100%;
+    border-radius: 50%;
+    background-image:
+        -webkit-radial-gradient(16% 50%, 30% 50%, rgba(255,240,230,.6), transparent),
+        linear-gradient(to right, rgba(255,240,220,0.5) 12%, rgba(255,240,220,0) 40%, rgba(0,0,0,0.64) 60%, rgba(0,0,0,1) 100%);
+    /* box-shadow: inset 10px 0 30px rgba(255,240,220,0.4); */
+}
+
+/* .planet-image:before {
+                content: '';
+                position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background: transparent url('http://rojo2.com/img/texture-01-clouds.png') repeat-x;
+  background-size: cover;
+  -webkit-animation: planet-rotation 18s linear infinite;
+} */
+
+.world_report_heading{
+    padding:60px 0 30px 0;
+}
+.world_report_heading h2{
+    text-align:center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+}
+@media (max-width:500px){
+    .world_report_heading{
+        padding:30px 0
+    }
+}

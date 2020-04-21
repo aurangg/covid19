@@ -22,7 +22,7 @@ class Facts extends React.Component{
         })
 
         const dataFacts = await responses.json();
-        
+        //console.log(dataFacts)
         let j;
         let rank = 0;
         for(j = 0; j < dataFacts.countries_stat.length ; j++)
@@ -33,14 +33,17 @@ class Facts extends React.Component{
                 break;
             }
         }
+        let rankInc = rank + 2
         this.setState({
             loading:false,
-            rank: rank,
+            rank: rankInc,
         })
     }
 
     render(){
         let {rank, emergency, dangerous, mild, threat} = this.state;
+        //let rankNum = parseFloat(rank.replace(/,/g, ''))
+        
         let spanclasses = "text";
         if(rank <= emergency) {
             spanclasses = "text e"

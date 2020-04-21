@@ -1,7 +1,7 @@
 import React from 'react';
 import Facts from '../components/Data/Facts'
 const Confirmed = (props) => {
-    const {heading, date, items, query} = props.confirmedProps
+    const {heading, date, items, time, query} = props.confirmedProps
     return(
         <div>
             {items.latest_stat_by_country.map((i) => (
@@ -19,10 +19,10 @@ const Confirmed = (props) => {
                                     <Facts />
                                 </h5>
                                 <p>
-                                   Date: {date[0]}
+                                   Date: {date}
                                 </p>
                                 <p style={{paddingBottom:'5px'}}>
-                                    Time: {date[1]}
+                                    Time: {time} (GMT + 5)
                                 </p>
                             </div>
                         </div>
