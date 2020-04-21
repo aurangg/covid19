@@ -29,6 +29,11 @@ const toolbar = props => (
                             World Cases
                         </li>
                     </Link>
+                    <Link to="/preventions">
+                        <li>
+                            Preventions
+                        </li>
+                    </Link>
                 </ul>
             </div>
         </nav>

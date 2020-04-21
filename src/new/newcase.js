@@ -2,10 +2,13 @@ import React from 'react';
 import '../components/Data/NewCases.css';
 
 const NewCase = (props) => {
-    const {newcases, oldcases, totalCases} = props.newcaseProps;
-   
+    const {newcases, oldcases} = props.newcaseProps;
+    //console.log(typeof)
+    //console.log(typeof oldcases)
    function newCasesFunction(nc, oc){
-        if(nc < oc){
+    let new_casesNUM = parseFloat(nc.replace(/,/g, ''))
+    let old_casesNUM = parseFloat(oc.replace(/,/g, ''))
+        if(new_casesNUM > old_casesNUM){
            return(
             <h4 id="figures" className="green">
             +{nc}
@@ -15,7 +18,7 @@ const NewCase = (props) => {
         else{
            return(
             <h4 id="figures">
-            0
+            {nc}
         </h4>
            )
         }
@@ -39,8 +42,7 @@ const NewCase = (props) => {
                             </h4>
                         </div>
                         <div className="col-6">
-                            {newCasesFunction(e.new_cases, oldcases)}
-                            
+                            {newCasesFunction(e.new_cases, oldcases)}        
                         </div>
                     </div>
                     <div className="row row_class">
@@ -50,7 +52,7 @@ const NewCase = (props) => {
                             </h4>
                         </div>
                         <div className="col-6">
-                            <h4 id="figures">
+                            <h4 id="figures" style={{color:'green'}}>
                                 {oldcases}
                             </h4>
                         </div>
@@ -58,12 +60,12 @@ const NewCase = (props) => {
                     <div className="row row_class">
                         <div className="col-6">
                             <h4 id="days">
-                                Total:
+                                Active Cases:
                             </h4>
                         </div>
                         <div className="col-6">
                             <h4 id="figures">
-                                {totalCases}
+                                {e.active_cases}
                             </h4>
                         </div>
                     </div>

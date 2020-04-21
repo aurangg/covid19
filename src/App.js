@@ -5,6 +5,9 @@ import Homepage from './homepage';
 import WorldWide from './world/worldwide';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
+import Preventions from './preventions/Preventions'
+//import MainNews from './MainNews';
+//import NewsPage from './News/NewsPage'
 import {
   BrowserRouter as Router,
   Switch,
@@ -48,6 +51,9 @@ class App extends React.Component{
             <Route  exact path="/" component={Homepage} />
             <Route path="/worldwide" component={WorldWide} />
             <Route path="/covid19" component={Homepage} />
+            <Route path="/preventions" component={Preventions} />
+            {/* <Route exact path="/news" component={MainNews} /> */}
+            {/* <Route path="/news/:id" component={NewsPage} /> */}
           </Switch>
         </Router>
       </div>

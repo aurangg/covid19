@@ -9,6 +9,9 @@ import Loader from './components/Common/Loading';
 import Confirmed from './new/confirmed';
 import NewCase from './new/newcase';
 import Deaths from './new/deaths';
+//import MainNews from './MainNews';
+//import NewsPage from './News/NewsPage'
+//import NewsHeader from './News/NewsHeader';
 
 
 class Homepage extends React.Component{
@@ -26,11 +29,28 @@ class Homepage extends React.Component{
       prevDaysDeath:null,
       totalCases: null,
       loadDivs:null,
+      latest_news: [
+        {
+            headline: "Government announces to open Software Industries and many more..",
+            small_detail: "On 14th April 2020, Prime Minister Imran Khan held a press breifing in which senator Hammad Azhar..",
+            id:0
+        },
+        {
+            headline: "Prime Minister asks Overseas Pakistan to contribute..",
+            small_detail: "In a video message, Prime Minister Imran Khan appealed Overseas Pakistan to contribute in Ehsas Program",
+            id:1
+        },
+        {
+            headline: "Ehsas Program starts distrubting funds",
+            small_detail: "Lorem Ispem andasdadpasdasdas",
+            id: 2
+        }
+      ]
     }
 
     async componentDidMount() {
       let today = new Date().toISOString().slice(0, 10)
-      let prevDate = new Date(Date.now() - 864e5).toISOString().slice(0, 10)
+      //let prevDate = new Date(Date.now() - 864e5).toISOString().slice(0, 10)
       //console.log(prevDate, today)
       const url = `https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php?country=${this.state.query}`
       const response = await fetch(url, {
@@ -78,7 +98,7 @@ class Homepage extends React.Component{
           }
         })
         const dataSec = await responseSec.json()
-        console.log(dataSec)
+        //console.log(dataSec)
         let indexFirst = data.latest_stat_by_country.length -1 
         const oldcases = dataSec.stat_by_country[indexFirst].new_cases
         //const todayCases = data.latest_stat_by_country[0].new_cases
@@ -136,11 +156,12 @@ class Homepage extends React.Component{
     }
     render(){
      
-      let {loading, items,query, heading, date, time, newcases, oldcases, oldRecover, todayRecover, prevDaysDeath, totalCases} = this.state;
+      let {loading, items,query, heading, date, time, newcases, oldcases, oldRecover, todayRecover, prevDaysDeath, latest_news} = this.state;
       let confirmedProps = {heading, date, time, items, query}
-      let newcaseProps = {newcases, oldcases, totalCases};
+      let newcaseProps = {newcases, oldcases};
       let recoveredProps = {newcases, oldRecover, todayRecover}
       let deathProps = {newcases, prevDaysDeath}
+      let newsProps={latest_news}
       if(loading)
       {
         return <Loader />

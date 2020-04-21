@@ -50,7 +50,7 @@ const RecoveredCases = (props) => {
                     <div className="row row_class">
                         <div className="col-6">
                             <h4 id="days">
-                                Yesterday:
+                                Yesterday Total:
                             </h4>
                         </div>
                         <div className="col-6">

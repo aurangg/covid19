@@ -2,9 +2,7 @@ import React from 'react';
 
 const Deaths = (props) => {
     const {newcases, prevDaysDeath} = props.deathProps;
-    let spanClass2 ={
-        fontSize:'12px', fontStyle:'italic', paddingLeft:'10px', color:'red', fontWeight:'bold'
-    }
+
     function calcaulateDeathFunction(newD, totalD, prevD){
         if(0 < prevD)
         {
